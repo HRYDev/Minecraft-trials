@@ -1,0 +1,62 @@
+body {
+    background: url(./fundo\ mine.webp) no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    background-position: center center;
+    
+
+}
+
+.wrapper {
+    position: relative;
+    width: 620px;
+    height: 600px;
+    background: linear-gradient(to bottom, rgba(30, 30, 30, .8), rgba(10, 10, 10, .9));
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+    padding: 20px 30px;
+
+}
+
+.sobre {
+    text-align: center;
+    font-size: 13px;
+    color: #A9A9A9;
+    font-family: 'Minecraft';
+    padding-top: 10px;
+    
+
+}
+
+.somos {
+    text-align: justify;
+    font-size: 12px;
+    color: #A9A9A9;
+    margin-top: 40px;
+    font-family: 'Minecraft';
+}
+
+.emojis {
+    text-align: center;
+    font-size: 40px;
+    user-select: none;
+    font-family: Segoe UI Emogi, sans-serif;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url(./fontes/MinecraftStandard.otf);
+
+}
+
+
+
+
+
+
+ 

@@ -1,0 +1,107 @@
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../Imagens/fundo.gif);
+    background-repeat: no-repeat;
+    background-size:cover;
+
+    margin: 1em;
+}
+
+/* This is probably fine */
+h1 { font-family: "Silkscreen"; color: white; margin: 0;}
+a { font-family: Helvetica; color: white; text-decoration: none; }
+
+.edgepadding { height: 1em; min-width: 0.5em; }
+.spacer { height: 1em; width: 4em; }
+
+.link { transition: translate 0.2s, scale 0.2s; }
+.link:hover { translate: 1em 0; scale: 110%; }
+
+.title { font-family: "Silkscreen"; font-size: xx-large; text-shadow: 2px 2px rgba(0, 0, 0, 0.25); height: fit-content; }
+.subtitle { font-size: medium; color: rgb(175, 175, 175); }
+
+.button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5em;
+    margin-left: 1em;
+
+    color: black;
+    font-family: "Silkscreen";
+
+    border-radius: 1em;
+    background-color: white;
+}
+.button img { height: 1.5em; aspect-ratio: 1/1;}
+
+.section { width: 100%; display: flex; flex-direction: row; }
+.subsection { display: flex; flex-direction: column; }
+
+.project
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    text-align: right;
+    height: fit-content;
+    width: 100%;
+}
+.project img { width: 8em; margin-left: 1em; aspect-ratio: 1/1; border-radius: 1em;}
+
+.card
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    margin: 1em;
+    margin-bottom: 0;
+    padding: 1em;
+
+    border-radius: 1em;
+    background-color: rgba(30, 42, 64, 0.75);
+}
+
+.picture { width: 100%; aspect-ratio: 1/1; border-radius: 1em; }
+.icon { width: 100%; aspect-ratio: 1/1; border-radius: 1em; }
+
+.connections
+{
+    display: grid;
+    height: 100%;
+
+    gap: 1em;
+    align-items: center;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+}
+
+.footer
+{
+    width: fit-content;
+    height: 2em;
+
+    margin: 1em;
+    padding: 1em;
+
+    border-radius: 1em;
+    background-color: rgba(30, 42, 64, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
