@@ -1,0 +1,135 @@
+@font-face { font-family: "Minecraftia"; src: url(../resources/fonts/Minecraft-Seven_v2.ttf); }
+@font-face { font-family: 'Minecraft-PE'; src: url(../resources/fonts/Minecraft-PE.ttf); }
+
+html  {
+  background-image: url("../resources/images/fundos/minefundo4.png") !important;
+  background-repeat: no-repeat !important; background-size: cover !important; background-color: rgb(48, 41, 28) !important;
+}
+
+body {
+  background-size: cover; background-color: rgb(0, 0, 0) !important;
+  background-image: url("../resources/images/fundos/minefundo2.jpg") !important;
+}
+
+#menu {
+  text-align: left; width: auto; height: 5em;
+  background-color: rgba(26, 25, 22, 0.9);
+  align-items: center; justify-content: center;
+}
+
+nav {
+  width: auto; height: 3em;
+  align-items: center; justify-content: center;
+  background-color: rgba(26, 25, 22, 0.9);
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.25); backdrop-filter: blur(10px);
+}
+
+a {
+  margin: 0 100px 0 0; color: rgb(255, 255, 255) !important;
+  font-family: Minecraftia; font-size: 20px !important;
+  align-self: center !important;
+  align-content: center !important;
+}
+
+nav li a {
+  color: rgb(141, 141, 141); text-decoration:none;
+  font-family: Minecraftia; font-size: 16px;
+  margin: 0 30px 0 30px; padding: 5px 10px 0px 10px;
+}
+
+#titulo {
+  color: white; margin-top: 1px;
+  font-family: Minecraftia; font-size: 30px;
+}
+
+.menuMinecraft {
+  text-align: center;
+  align-items: center; justify-content: center;
+}
+
+.caixa1 {
+  text-align: center;
+  width: 70, 80em; margin: 110px;
+  background-color: rgb(209, 209, 209);
+  align-items: center; justify-content: center; 
+}
+
+.caixa2 {
+  display: flex; align-items: center; justify-content: center;
+  background-color: rgb(172, 172, 172); text-align: center;
+} 
+
+.subtitulo {
+  margin-top: 5px;
+  align-items: center; justify-content: center;
+  font-family: Minecraftia; font-size: 17px;
+  text-align: center; color: rgb(4, 24, 9);
+} 
+
+.titulo2 {
+  margin: 10px; color: rgb(54, 66, 57);
+  font-family: "MINECRAFT-PE"; font-size: 50px;
+}
+
+img {
+  display: flex; align-items: center; justify-content: center !important;
+  width: 9%; height: 9%; transform: translate(-50%, -50%) !important;
+}
+
+#pagina { text-align: center; align-items: center; justify-content: center; }
+
+#textogeral {
+  font-family: Minecraftia; font-size: 27px;
+  text-align: auto; color: rgb(255, 255, 255);
+}
+
+#textogeral2 {
+  font-family: Minecraft-pe; font-size: 30px;
+  text-align: center; font-weight: bold; color: rgb(0, 0, 0);
+}
+
+#textogeral3 {
+  font-family: Minecraftia; font-size: 20px;
+  text-align: center; color: rgb(255, 157, 77);
+}
+
+#imagens  {
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; margin-left: 30px;
+}
+#imagens img { width: 200px; height: 200px; }
+
+.lobo {
+  background-color: rgb(109, 92, 75); text-align: center;
+  align-items: center; justify-content: center;
+}
+
+.esqueleto {
+  background-color: rgb(211, 211, 211); text-align: center;
+  align-items: center; justify-content: center;
+}
+
+.creeper {
+  background-color: rgb(23, 97, 27); text-align: center;
+  align-items: center; justify-content: center;
+}
+
+.steve {
+  background-color: rgb(41, 76, 122); text-align: center;
+  align-items: center; justify-content: center;
+}
+
+.zumbi {
+  display: flow-root; text-align: center;
+  align-items: center; justify-content: center;
+  background-color: rgb(41, 78, 50);
+}
+
+#mine{
+  padding-bottom: 150px !important;
+}
+
+#neterrblock {
+  padding-top: 80px !important;
+
+}

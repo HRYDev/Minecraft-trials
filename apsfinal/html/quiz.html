@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Minecraft Trials </title>
+        <link rel="stylesheet" href="../css/quiz.css">
+        <script src="../javascript/quiz.js" defer></script>
+        <link rel="icon" type="image/png" sizes="128x128" href="../resources/items/blocks/grass.png">
+    </head>
+
+    <body>
+        <nav>
+            <div class="edgepadding"></div>
+            <div class="row align"><img src="../resources/items/blocks/grass.png"><a class="title">Minecraft Trials</a></div>
+            <div class="fill"></div>
+            <a class="navbutton" href="inicioindex.html">Tutorial</a>
+            <a class="navbutton" href="quiz.html">Quiz</a>
+            <a class="navbutton" href="contato.html">Contato</a>
+            <a class="navbutton" href="sobre.html">Sobre</a>
+            <div class="edgepadding"></div>
+        </nav>
+
+        <div class="main align column">
+            <div class="questions row margin-bottom">
+                <a id="led1" class="panel">1</a>
+                <a id="led2" class="panel">2</a>
+                <a id="led3" class="panel">3</a>
+                <a id="led4" class="panel">4</a>
+                <a id="led5" class="panel">5</a>
+                <a id="led6" class="panel">6</a>
+                <a id="led7" class="panel">7</a>
+                <a id="led8" class="panel">8</a>
+                <a id="led9" class="panel">9</a>
+                <a id="led10" class="panel">10</a>
+            </div>
+            <div class="fill margin-bottom" oncontextmenu="return false">
+                <div class="panel">
+                    <a id="question" class="highlight"> Minecraft! Jack Black! Chicken Jockley!!</a>
+                </div>
+            </div>
+            <div id="alternatives" class="fill column" oncontextmenu="return false">
+                <div class="panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer1" value="1" onclick="Tick()">
+                    <label for="answer1" id="label1"> </label>
+                </div>
+                <div class= "panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer2" value="2" onclick="Tick()">
+                    <label for="answer2" id="label2"> </label>
+                </div>
+                <div class="panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer3" value="3" onclick="Tick()">
+                    <label for="answer3" id="label3"> </label>
+                </div>
+                <div class="panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer4" value="4" onclick="Tick()">
+                    <label for="answer4" id="label4"> </label>
+                </div>
+            </div>
+            <button id="submit" type="button" class="panel"> Próximo </button>
+        </div>
+        
+        <div class="jukebox"><a id="permission"><img src="../resources/images/jukebox.png"></a></div>
+        <audio id="audio"></audio>
+    </body>
+</html>
