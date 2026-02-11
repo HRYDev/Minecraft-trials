@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegação estilo YouTube</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            padding-top: 80px;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 30px;
+        }
+        
+        .search-bar {
+            display: flex;
+            flex-grow: 0.6;
+            margin: 0 20px;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px 0 0 20px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .search-bar button {
+            padding: 8px 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-actions button {
+            background: none;
+            border: none;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .categories {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+        }
+        
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .category {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-right: 10px;
+            background-color: #f2f2f2;
+            border-radius: 16px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .category:hover {
+            background-color: #e5e5e5;
+        }
+        
+        .category.active {
+            background-color: #000;
+            color: white;
+        }
+        
+        .videos-section {
+            padding: 20px;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+        
+        .videos-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 20px;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .videos-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .videos-section:hover .scroll-button {
+            opacity: 1;
+        }
+        
+        .scroll-button.left {
+            left: -20px;
+        }
+        
+        .scroll-button.right {
+            right: -20px;
+        }
+        
+        .scroll-button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .video-card {
+            flex: 0 0 300px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .duration {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .video-info {
+            padding: 12px;
+        }
+        
+        .video-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .channel-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .channel-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 10px;
+        }
+        
+        .channel-name {
+            font-size: 14px;
+            color: #606060;
+        }
+        
+        .video-stats {
+            font-size: 13px;
+            color: #606060;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="https://www.youtube.com/yts/img/yt_1200-vfl4C3T0K.png" alt="YouTube Logo">
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar">
+            <button>🔍</button>
+        </div>
+        
+        <div class="user-actions">
+            <button>📹</button>
+            <button>🔔</button>
+            <button>👤</button>
+        </div>
+    </header>
+    
+    <div class="categories">
+        <div class="category active">Todos</div>
+        <div class="category">Música</div>
+        <div class="category">Jogos</div>
+        <div class="category">Ao vivo</div>
+        <div class="category">Programação</div>
+        <div class="category">Comédia</div>
+        <div class="category">Podcasts</div>
+        <div class="category">Notícias</div>
+        <div class="category">Esportes</div>
+        <div class="category">Aprender</div>
+        <div class="category">Filmes</div>
+        <div class="category">Vídeos em alta</div>
+        <div class="category">Assistir mais tarde</div>
+    </div>
+    
+    <div class="videos-section">
+        <h2 class="section-title">Recomendados para você</h2>
+        <button class="scroll-button left" onclick="scrollVideos('left', 'recommended')">❮</button>
+        <div class="videos-container" id="recommended-videos">
+            <!-- Vídeos recomendados -->
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">10:30</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Como criar uma barra de navegação como a do YouTube com HTML e CSS</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Web Dev Tutorials</span>
+                    </div>
+                    <div class="video-stats">15 mil visualizações • há 2 dias</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">15:45</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Aprenda CSS Grid em 15 minutos - Tutorial rápido para iniciantes</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Frontend Simplified</span>
+                    </div>
+                    <div class="video-stats">45 mil visualizações • há 1 semana</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">22:10</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">As melhores dicas de JavaScript que você não conhecia em 2023</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">JS Masters</span>
+                    </div>
+                    <div class="video-stats">120 mil visualizações • há 3 semanas</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">8:25</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Como fazer um clone do YouTube com React.js - Passo a passo</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">React Pro</span>
+                    </div>
+                    <div class="video-stats">32 mil visualizações • há 5 dias</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">12:40</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Introdução ao Node.js - Criando seu primeiro servidor</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Backend Basics</span>
+                    </div>
+                    <div class="video-stats">28 mil visualizações • há 1 semana</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">18:15</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Tutorial completo de Flexbox - Domine o layout CSS</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">CSS Experts</span>
+                    </div>
+                    <div class="video-stats">75 mil visualizações • há 2 semanas</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">25:30</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Python para iniciantes - Primeiros passos na programação</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Python Academy</span>
+                    </div>
+                    <div class="video-stats">95 mil visualizações • há 3 semanas</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">14:20</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Como criar animações incríveis com CSS e JavaScript</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">UI Animations</span>
+                    </div>
+                    <div class="video-stats">42 mil visualizações • há 4 dias</div>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-button right" onclick="scrollVideos('right', 'recommended')">❯</button>
+    </div>
+    
+    <div class="videos-section">
+        <h2 class="section-title">Em alta agora</h2>
+        <button class="scroll-button left" onclick="scrollVideos('left', 'trending')">❮</button>
+        <div class="videos-container" id="trending-videos">
+            <!-- Vídeos em alta -->
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">9:15</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">As novidades do JavaScript em 2023 - ES14 Features</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">JS News</span>
+                    </div>
+                    <div class="video-stats">210 mil visualizações • há 1 dia</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">16:50</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Como se tornar um desenvolvedor Full-Stack em 6 meses</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Career Dev</span>
+                    </div>
+                    <div class="video-stats">180 mil visualizações • há 2 dias</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">11:25</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">React vs Vue vs Angular - Qual framework escolher em 2023?</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Framework Wars</span>
+                    </div>
+                    <div class="video-stats">150 mil visualizações • há 3 dias</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">19:40</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Tutorial completo de TypeScript - Do básico ao avançado</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">TS Masters</span>
+                    </div>
+                    <div class="video-stats">120 mil visualizações • há 4 dias</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">13:55</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Como construir um portfólio incrível para desenvolvedores</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Dev Portfolio</span>
+                    </div>
+                    <div class="video-stats">95 mil visualizações • há 5 dias</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">21:10</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Git e GitHub para iniciantes - Controle de versão completo</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Git Experts</span>
+                    </div>
+                    <div class="video-stats">110 mil visualizações • há 1 semana</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">7:30</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">10 atalhos do VS Code que todo desenvolvedor deveria conhecer</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">VS Code Tips</span>
+                    </div>
+                    <div class="video-stats">135 mil visualizações • há 2 dias</div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="thumbnail">
+                    <div class="duration">14:45</div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Como otimizar seu site para SEO - Guia para desenvolvedores</h3>
+                    <div class="channel-info">
+                        <div class="channel-icon"></div>
+                        <span class="channel-name">Web SEO</span>
+                    </div>
+                    <div class="video-stats">88 mil visualizações • há 3 dias</div>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-button right" onclick="scrollVideos('right', 'trending')">❯</button>
+    </div>
+
+    <script>
+        function scrollVideos(direction, section) {
+            const container = document.getElementById(`${section}-videos`);
+            const scrollAmount = 300;
+            
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+@font-face { font-family: "Minecraft"; src: url(../resources/fonts/Minecraft-Seven_v2.ttf); }
+html {
+    background-image: url("../resources/images/fundos/fundo.png");
+    box-shadow: inset 0 4em 4em 0.1em black; background-size: cover;
+}
+img { image-rendering: pixelated; user-select: none; }
+a { font-family: Minecraft; }
+
+body {
+    display: flex; margin: 0; overflow: hidden;
+    align-items: center; flex-direction: column;
+    width: 100%; height: 100vmin;
+}
+
+nav {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 100%; min-height: 4em; background-color: rgb(38,36,35);
+}
+nav img { max-width: 2.5em; max-height: 2.5em; }
+nav a { font-size: xx-large; color: white; }
+.title { pointer-events: none; min-width: max-content; margin-left: 0.5em; }
+
+.navbutton {
+    height: 90%; min-width: 5em;
+    margin-left: 0.5em; margin-right: 0.5em; padding-left: 0.5em; padding-right: 0.5em;
+    cursor: pointer; text-decoration: none; font-size: large; color: #c6c6c6;
+    display: flex; align-items: center; justify-content: center;
+}
+.navbutton:hover { color: white; }
+.edgepadding { min-width: 4em; }
+
+.row { display: flex; }
+.align { align-items: center; }
+.column { display: flex; flex-direction: column; }
+
+.fill { width: 100%; }
+.margin { margin: 0.5em; }
+.margin-bottom { margin-bottom: 0.5em; }
+
+.main { justify-content: center; width: 35em; height: 100%; }
+
+.questions { align-self: start; }
+.questions a {
+    display: flex; justify-content: center;
+    width: 1em; aspect-ratio: 1/1; margin-right: 0.5em;
+    font-size: medium; color: #484848;
+}
+
+button {
+    padding-left: 1em !important; padding-right: 1em !important;
+    font-family: Minecraft; font-size: large;
+}
+
+#submit {
+    align-self: end; background-color: #52a535 !important;
+    color: white; text-shadow: 0.1em 0.1em #555; cursor: pointer;
+}
+
+.jukebox {
+    cursor: pointer; position: absolute;
+    left: 2em; bottom: 2em; max-width: 4em; max-height: 4em;
+}
+.jukebox a { display: flex; }
+.jukebox img { width: 100%; height: 100%; }
+
+input:where([type="radio"]) {
+    appearance: none; cursor: pointer; align-self: center;
+    width: 2em; aspect-ratio: 1/1; margin: 0;
+    border: 0.2em inset white; background-color: #555;
+}
+
+input[type="radio"]:checked {
+    border-color: #52a535; background-size: cover;
+    background-image: url(../resources/images/checkmark.png);
+}
+
+.panel {
+    padding: 0.5em; border: 0.2em solid grey; background-color: #c6c6c6;
+    border-top-color: white; border-left-color: white;
+}
+
+label {
+    padding-left: 0.8em; cursor: pointer; width: 100%;
+    font-family: Minecraft; font-size: large; color: #484848;
+}
+.highlight { width: 100%; font-family: Minecraft; font-size: x-large; color: #484848; }
+
+.craftingTable {
+    display: grid; grid-gap: 2px; width: fit-content; aspect-ratio: 1/1;
+    grid-template-rows: auto auto auto; grid-template-columns: auto auto auto;
+}
+.arrow { width: 5em; margin: 2em; }
+
+.inventory {
+    display: grid; width: fit-content; height: fit-content; grid-gap: 2px;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}
+
+.itemSlot {
+    display: flex; position: relative; align-items: center; justify-content: center;
+    min-width: 3em; max-width: 3em; aspect-ratio: 1/1; background-color: rgb(139, 139, 139);
+    border: 0.25em inset grey; border-right-color: white; border-bottom-color: white;
+}
+.itemSlot:hover { background-color: rgb(160, 160, 160); }
+.itemSlot img { width: 75%; height: 75%; }
+.itemSlot a {
+    user-select: none; position: absolute; bottom: 0; right: 5%; height: small;
+    color: rgb(255, 255, 255); text-shadow: 0.15em 0.15em #555;
+}
+
+.output { min-width: 4em; }
+.hand {
+    pointer-events: none; z-index: 1;
+    position: absolute; translate: -50% -50%;
+    border: none; background-color: transparent;
+}

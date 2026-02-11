@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Minecraft Trials </title>
+        <link rel="icon" type="image/png" sizes="128x128" href="../resources/items/blocks/grass.png">
+        
+        <script src="../javascript/crafting.js" defer></script>
+        <script src="../javascript/quiz.js" defer></script>
+        <link rel="stylesheet" href="../css/quiz.css">
+    </head>
+
+    <body>
+        <nav>
+            <div class="edgepadding"></div>
+            <div class="row align">
+                <img src="../resources/items/blocks/grass.png">
+                <a class="title"> Minecraft Trials </a>
+            </div>
+            <div class="fill"></div>
+            <a class="navbutton">Tutorial</a>
+            <a class="navbutton">Quiz</a>
+            <a class="navbutton">Resultado</a>
+            <a class="navbutton" href="contato.html">Contato</a>
+            <a class="navbutton" href="sobre.html">Sobre</a>
+            <div class="edgepadding"></div>
+        </nav>
+
+        <!-- Main Container-->
+        <div class="main align column">
+            
+            <!-- Question Numbers -->
+            <div class="questions row margin-bottom">
+                <a id="led1" class="panel">1</a>
+                <a id="led2" class="panel">2</a>
+                <a id="led3" class="panel">3</a>
+                <a id="led4" class="panel">4</a>
+                <a id="led5" class="panel">5</a>
+                <a id="led6" class="panel">6</a>
+                <a id="led7" class="panel">7</a>
+                <a id="led8" class="panel">8</a>
+                <a id="led9" class="panel">9</a>
+                <a id="led10" class="panel">10</a>
+            </div>
+
+            <!-- Question Box -->
+            <div class="fill margin-bottom" oncontextmenu="return false">
+                <div class="panel">
+                    <a id="question" class="highlight"> Minecraft! Jack Black! Chicken Jockley!!</a>
+                </div>
+            </div>
+
+            <!-- Alternatives -->
+            <div id="alternatives" class="fill column" oncontextmenu="return false">
+                <div class="panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer1" value="1" onclick="Tick()">
+                    <label for="answer1" id="label1"> </label>
+                </div>
+
+                <div class= "panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer2" value="2" onclick="Tick()">
+                    <label for="answer2" id="label2"> </label>
+                </div>
+
+                <div class="panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer3" value="3" onclick="Tick()">
+                    <label for="answer3" id="label3"> </label>
+                </div>
+
+                <div class="panel row align margin-bottom">
+                    <input type="radio" name="answers" id="answer4" value="4" onclick="Tick()">
+                    <label for="answer4" id="label4"> </label>
+                </div>
+            </div>
+
+            <!-- Crafting Table -->
+            <div id="craft" class="align column panel margin-bottom" oncontextmenu="return false">
+
+                <div id="0" class="hand itemSlot"></div>
+
+                <div class="align margin column">
+                    <a class="highlight">Fabricação</a>
+                    <div class="align row" onmousedown="return false" oncontextmenu="return false">
+                        <div class="craftingTable">
+                            <div id="1" class="itemSlot" onclick="LeftClick(1)" oncontextmenu="RightClick(1)"></div>
+                            <div id="2" class="itemSlot" onclick="LeftClick(2)" oncontextmenu="RightClick(2)"></div>
+                            <div id="3" class="itemSlot" onclick="LeftClick(3)" oncontextmenu="RightClick(3)"></div>
+                            <div id="4" class="itemSlot" onclick="LeftClick(4)" oncontextmenu="RightClick(4)"></div>
+                            <div id="5" class="itemSlot" onclick="LeftClick(5)" oncontextmenu="RightClick(5)"></div>
+                            <div id="6" class="itemSlot" onclick="LeftClick(6)" oncontextmenu="RightClick(6)"></div>
+                            <div id="7" class="itemSlot" onclick="LeftClick(7)" oncontextmenu="RightClick(7)"></div>
+                            <div id="8" class="itemSlot" onclick="LeftClick(8)" oncontextmenu="RightClick(8)"></div>
+                            <div id="9" class="itemSlot" onclick="LeftClick(9)" oncontextmenu="RightClick(9)"></div>
+                        </div>
+                        <img class="arrow" src="../resources/images/arrow.png">
+                        <div id="19" class="output itemSlot" onclick="LeftClick(19)" oncontextmenu="RightClick(19)"></div>
+                    </div>
+                </div>
+
+                <div class="margin column">
+                    <a class="highlight">Inventário</a>
+                    <div class="inventory" onmousedown="return false" oncontextmenu="return false">
+                        <div id="10" class="itemSlot" onclick="LeftClick(10)" oncontextmenu="RightClick(10)"></div>
+                        <div id="11" class="itemSlot" onclick="LeftClick(11)" oncontextmenu="RightClick(11)"></div>
+                        <div id="12" class="itemSlot" onclick="LeftClick(12)" oncontextmenu="RightClick(12)"></div>
+                        <div id="13" class="itemSlot" onclick="LeftClick(13)" oncontextmenu="RightClick(13)"></div>
+                        <div id="14" class="itemSlot" onclick="LeftClick(14)" oncontextmenu="RightClick(14)"></div>
+                        <div id="15" class="itemSlot" onclick="LeftClick(15)" oncontextmenu="RightClick(15)"></div>
+                        <div id="16" class="itemSlot" onclick="LeftClick(16)" oncontextmenu="RightClick(16)"></div>
+                        <div id="17" class="itemSlot" onclick="LeftClick(17)" oncontextmenu="RightClick(17)"></div>
+                        <div id="18" class="itemSlot" onclick="LeftClick(18)" oncontextmenu="RightClick(18)"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button id="submit" type="button" class="panel"> Próximo </button>
+        </div>
+
+        <div class="jukebox"><a id="permission"><img src="../resources/images/jukebox.png"></a></div>
+        <audio id="audio"></audio>
+    </body>
+</html>

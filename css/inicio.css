@@ -1,0 +1,198 @@
+
+html    {
+align-items: top;
+justify-content: center;
+
+box-shadow: 0 0 8em -2em black inset;
+
+background-size: 100%;
+background-repeat: repeat;
+image-rendering: pixelated;
+background-image: url("../resources/images/minefundo2.jpg");
+}
+
+
+body    {
+margin: 0;
+}
+
+:root, [data-bs-theme=light] {
+--bs-body-bg: #ffffff00 !important;
+}
+.carousel-control-next, .carousel-control-prev {
+width: 5% !important;
+}
+
+#fundo {
+width: 100%;
+position: relative;
+image-rendering: repeat;
+image-rendering: pixelated;
+border-bottom-color: rgba(0, 0, 0, 0.174);
+
+}
+
+#introduçao{
+font-weight: 900;
+position: center;
+padding: 1em 50px 0 50px;
+color: rgb(255, 255, 255);
+font-family: Minecraftia;
+font-size: xx-large;
+align-self: center;
+align-content: center;
+font-size: 20px;
+list-style: none;
+margin-bottom: 3em;
+
+}
+
+p {
+text-indent: 18px;
+color: rgb(217, 217, 217);
+font-size: 20px;
+
+}
+
+nav    {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+width: 100%;
+height: 5em;
+
+position: relative;
+
+backdrop-filter: blur(10px);
+background-color: rgba(26, 25, 22, 0.9);
+box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.25);
+list-style: none;
+
+}
+
+@font-face { font-family: "Minecraftia"; src: url(../resources/fonts/Minecraftia-Regular.ttf); }
+
+nav #mine   {
+color: rgb(255, 255, 255);
+font-family: Minecraftia;
+font-size: xx-small;
+align-self: center;
+align-content: center;
+font-size: 20px;
+margin: 0 100px 0 0;
+padding-top: 20px;
+}
+
+nav #mine img  {
+margin-bottom: 25px;
+}
+
+nav li a{
+color: rgb(141, 141, 141);
+font-family: Minecraftia;
+font-size: xx-small;
+font-size: 16px;
+text-decoration:none;
+margin: 0 30px 0 30px;
+padding: 5px 10px 0px 10px;
+}
+
+nav #login li a{
+color: rgb(255, 255, 255);
+font-size: 16px;
+}
+
+nav li a:hover{
+background-color: rgba(86, 86, 86, 0.375);
+border-radius: 10px;
+}
+
+navbut  {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+width: calc(100vw - 8em);
+height: 5em;
+
+padding-left: 4em;
+padding-right: 4em;
+position: fixed;
+bottom: 0%;
+
+list-style: none;
+    
+}
+
+.butfrant   {
+z-index: 3;
+
+}
+
+.carousel-inner {
+top: 40px;
+align-self: center;
+justify-self: center;
+}
+
+#textonovo{
+margin: 40px 0 0 0 ;
+color: rgba(255, 255, 255, 0);
+font-family: Minecraftia;
+
+}
+
+#infocor{
+margin-top: 80px;
+margin-bottom: 80px;
+padding: 4px 4px 4px 4px;
+border-style: inset;
+border-width: 0.25em;
+border-color: grey;
+border-right-color: white;
+border-bottom-color: white;
+
+background-color: rgb(139, 139, 139);
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+#box    {
+backdrop-filter: blur(10px);
+background-color: rgba(23, 23, 23, 0.789);
+position: relative;
+z-index: 1;
+}
+
+#infobox    {
+display: inline-flex;
+padding-top: 1em;
+padding-bottom: 1em;
+position: relative;
+width: 100%;
+height: 3em;
+bottom: 0%;
+background-color: #242424;
+list-style: none;
+z-index: 2;
+color: rgb(151, 151, 151);
+font-family: Minecraftia;
+align-items: center;
+justify-content: center;
+}
+
+#infobox p {
+margin: 0 auto 0 auto;
+font-size: 17px;
+}
+
+.carousel-inner #v1{
+margin: 0 0px 0 25px;
+transform: rotate(90);
+position: relative;
+}
+
+#textoprinc{
+font-size: 26px;
+font-weight: 50;
+}

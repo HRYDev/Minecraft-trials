@@ -1,0 +1,36 @@
+body {
+    display: flex; align-items: center; justify-content: center;
+    background: url(../resources/images/fundos/fundomine.webp) no-repeat;
+    background-position: center center; background-size: cover;
+    min-height: 100vh;
+}
+
+.wrapper {
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+    background: linear-gradient(to bottom, rgba(30, 30, 30, .8), rgba(10, 10, 10, .9));
+    border: 2px solid rgba(255, 255, 255, .2); border-radius: 20px;
+    position: relative; width: 620px; height: 600px; padding: 20px 30px;
+}
+
+.sobre {
+    padding-top: 10px;
+    text-align: center; color: white;
+    font-family: 'Minecraft'; font-size: large;
+}
+
+.somos {
+    margin-top: 40px;
+    text-align: justify; color: #A9A9A9;
+    font-family: 'Minecraft'; font-size: large;
+}
+
+.emojis {
+    text-align: center; user-select: none;
+    font-family: Segoe UI Emogi, sans-serif; font-size: 40px;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url(../resources/fonts/Minecraft-Seven_v2.ttf);
+}
